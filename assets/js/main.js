@@ -98,20 +98,25 @@ sections.forEach(current =>{
 window.addEventListener('scroll', scrollActive)
 
 /* ----- EMAILJS INTEGRATION ----- */
-// Initialize EmailJS (replace with your Public Key)
-(function(){
-  emailjs.init("-lsI25veyjXAO2Otw"); 
-})();
+
 
 // Handle form submission
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
+// ----- EMAILJS CONTACT FORM -----
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-  emailjs.sendForm("service_zpyqiiy", "template_odcq2hb", this)
+    emailjs.send("service_zpyqiiy", "template_mnntrfb", {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    })
     .then(function(response) {
         alert("✅ Message sent successfully!");
+        console.log("SUCCESS", response);
+        document.getElementById("contact-form").reset(); // clear form
     }, function(error) {
         alert("❌ Failed to send message. Please try again.");
-        console.log("Error:", error);
+        console.error("FAILED", error);
     });
 });
+
