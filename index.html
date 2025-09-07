@@ -183,21 +183,23 @@
                     <p><i class="uil uil-phone"></i> Tel: +2126 222 96917</p>
                 </div>
              </div>
-             <div class="col">
-                <!-- Contact Form -->
-                <form id="contact-form">
-                    <div class="form-inputs">
-                        <input type="text" name="from_name" class="input-field" placeholder="Name" required>
-                        <input type="email" name="from_email" class="input-field" placeholder="Email" required>
-                    </div>
-                    <div class="text-area">
-                        <textarea name="message" placeholder="Message" required></textarea>
-                    </div>
-                    <div class="form-button">
-                        <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
-                    </div>
-                </form>
-             </div>
+<div class="col">
+    <div class="form-control">
+        <form id="contact-form">
+            <div class="form-inputs">
+                <input type="text" id="name" class="input-field" placeholder="Name" required>
+                <input type="email" id="email" class="input-field" placeholder="Email" required>
+            </div>
+            <div class="text-area">
+                <textarea id="message" placeholder="Message" required></textarea>
+            </div>
+            <div class="form-button">
+                <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
           </div>
        </section>
 
@@ -235,8 +237,12 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- ----- EMAILJS LIBRARY ----- -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+      emailjs.init("-lsI25veyjXAO2Otw"); // Your public key
+  })();
+</script>
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
 </body>
