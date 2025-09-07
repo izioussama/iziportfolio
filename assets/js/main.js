@@ -105,7 +105,7 @@ window.addEventListener('scroll', scrollActive)
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    emailjs.send("service_zpyqiiy", "template_mnntrfb", {
+    emailjs.send("ur service id", "ur template id", {
         from_name: document.getElementById("name").value,
         from_email: document.getElementById("email").value,
         message: document.getElementById("message").value
@@ -119,4 +119,5 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         console.error("FAILED", error);
     });
 });
+
 
